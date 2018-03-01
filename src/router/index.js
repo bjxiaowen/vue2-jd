@@ -70,13 +70,13 @@ const appRouter = {
       path: '/register',
       name: 'register',
       component: Register,
-      meta: { keepAlive: true }
+      meta: { keepAlive: false }
     },
     {
       path: '/forget',
       name: 'forget',
       component: Forget,
-      meta: { keepAlive: true }
+      meta: { keepAlive: false }
     },
     {
       path: '/cart',
@@ -100,7 +100,7 @@ const appRouter = {
       path: '/order',
       name: 'order',
       component: Order,
-      meta: { keepAlive: true }
+      meta: { keepAlive: false }
     },
     {
       path: '/createOrder',
@@ -130,13 +130,13 @@ const appRouter = {
       path: '/shop',
       name: 'shop',
       component: Shop,
-      meta: { keepAlive: true }
+      meta: { keepAlive: false }
     },
     {
       path: '/sttings',
       name: 'sttings',
       component: Sttings,
-      meta: { keepAlive: true }
+      meta: { keepAlive: false }
     },
     {
       path: '/addressList',

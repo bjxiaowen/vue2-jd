@@ -40,10 +40,10 @@ class Http {
             data: options.param
         }).then(response => {
             Indicator.close();
-            if(response.data.Code === 0){
+            if(response.data.Code === 0){ //请求成功
                 return resolve(response.data)
             }else{
-                if(response.data.Code === 2){
+                if(response.data.Code === 2){ //未登录
                   router.push('/Login')
                 }
                 Toast({

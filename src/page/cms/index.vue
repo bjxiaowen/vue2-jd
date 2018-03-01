@@ -405,9 +405,6 @@
   #jd {
     min-height: 100vh;
     padding-bottom: 1.35rem;
-    .searchContainer {
-      top: 50px;
-    }
     .appTabscenter {
       .mint-swipe-indicators {
         transform: translate(-50%, 150%);

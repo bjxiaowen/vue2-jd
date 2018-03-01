@@ -1,14 +1,14 @@
 <template>
-  <div class="mint-loadmore" 
+  <div class="loadmore" 
         id="ScrollLoadMore"
         v-infinite-scroll="onloadMoreScroll"
         :infinite-scroll-disabled="LoadMoreLoading"
         :infinite-scroll-distance="0"
         v-if="!LoadMoreError"
     >
-    <div class="mint-loadmore-content" :class="{ 'is-dropped': topDropped || bottomDropped}" :style="{ 'transform': 'translate3d(0, ' + translate + 'px, 0)' }">
+    <div class="loadmore-content" :class="{ 'is-dropped': topDropped || bottomDropped}" :style="{ 'transform': 'translate3d(0, ' + translate + 'px, 0)' }">
       <slot name="top">
-        <div class="mint-loadmore-top" v-if="topMethod">
+        <div class="loadmore-top" v-if="topMethod">
           <div v-if="topStatus !== 'loading'" :class="topStatus === 'drop' ? 'drop' : 'pull'">
                 <icon v-if="loadMoreIconVisible" :class="['arrow-down',topStatus === 'drop'? 'arrow-drop':'arrow-pull']" name="long-arrow-down" scale="1.1"></icon>
                 <span>{{topStatus === 'drop' ? '释放更新' : '下拉刷新'}}</span>
@@ -21,11 +21,11 @@
       </slot>
       <slot></slot>
       <slot name="LoadmoreText">
-          <div v-if="!AllLoaded && LoadMoreLoading" class="mint-loadmoreText">
+          <div v-if="!AllLoaded && LoadMoreLoading" class="loadmoreText">
             <mt-spinner v-if="loadMoreIconVisible" :size="20" type="fading-circle"></mt-spinner>
             <span>加载中...</span>
           </div>
-          <div v-if="AllLoaded" class="mint-loadmoreText AllLoaded">
+          <div v-if="AllLoaded" class="loadmoreText AllLoaded">
             <span>没有更多了</span>
           </div>
       </slot>
@@ -35,7 +35,7 @@
 
 <style lang="scss" scoped>
 
-  .mint-loadmoreText{
+  .loadmoreText{
       /* background: #f0f3f5; */
       display: flex;
       flex: 1;
@@ -65,7 +65,7 @@
     transform: rotate(-180deg);
   }
 
-  .mint-loadmore-top {
+  .loadmore-top {
     >div {
       font-size: 15px;
       color: #666;
@@ -444,7 +444,7 @@
   };
 </script>
 <style lang="scss">
-.mint-loadmore-content{
+.loadmore-content{
   min-height: 100vh;
 }
 </style>

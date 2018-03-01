@@ -23,58 +23,58 @@ __本项目纯属个人瞎弄，正常购买商品请选择京东官方App__
 
 ### 移动端扫描下方二维码
 
-<img src="https://github.com/Caitingwei/vue2-jd/blob/master/qrcode.png" width="250" height="250"/>
+<img src="https://github.com/Caitingwei/vue2-jd/raw/master/screenshots/qrcode.png" width="250" height="250"/>
 
 
 ## 效果展示
 
 - 响应式布局首页
-![image](https://github.com/Caitingwei/vue2-jd/blob/master/home.png)
+![image](https://github.com/Caitingwei/vue2-jd/raw/master/screenshots/home.png)
 
 - 底部商品推荐
-![image](https://github.com/Caitingwei/vue2-jd/blob/master/home2.png)
+![image](https://github.com/Caitingwei/vue2-jd/raw/master/screenshots/home2.png)
 
 - 顶部搜索栏
-![image](https://github.com/Caitingwei/vue2-jd/blob/master/search.png)
+![image](https://github.com/Caitingwei/vue2-jd/raw/master/screenshots/search.png)
 
 - 商品详情页
-![image](https://github.com/Caitingwei/vue2-jd/blob/master/product.png)
+![image](https://github.com/Caitingwei/vue2-jd/raw/master/screenshots/product.png)
 
 - 文章资讯
-![image](https://github.com/Caitingwei/vue2-jd/blob/master/article2.png)
+![image](https://github.com/Caitingwei/vue2-jd/raw/master/screenshots/article2.png)
 
 - 视频资讯
-![image](https://github.com/Caitingwei/vue2-jd/blob/master/article.png)
+![image](https://github.com/Caitingwei/vue2-jd/raw/master/screenshots/article.png)
 
 - 文章详情
-![image](https://github.com/Caitingwei/vue2-jd/blob/master/articleDetail.png)
+![image](https://github.com/Caitingwei/vue2-jd/raw/master/screenshots/articleDetail.png)
 
 - 用户登录
-![image](https://github.com/Caitingwei/vue2-jd/blob/master/login.png)
+![image](https://github.com/Caitingwei/vue2-jd/raw/master/screenshots/login.png)
 
 - 注册
-![image](https://github.com/Caitingwei/vue2-jd/blob/master/zhuci.png)
+![image](https://github.com/Caitingwei/vue2-jd/raw/master/screenshots/zhuci.png)
 
 - 购物车
-![image](https://github.com/Caitingwei/vue2-jd/blob/master/cart.png)
+![image](https://github.com/Caitingwei/vue2-jd/raw/master/screenshots/cart.png)
 
 - 下单
-![image](https://github.com/Caitingwei/vue2-jd/blob/master/createOrder.png)
+![image](https://github.com/Caitingwei/vue2-jd/raw/master/screenshots/createOrder.png)
 
 - 下单-支付密码
-![image](https://github.com/Caitingwei/vue2-jd/blob/master/createOrder2.png)
+![image](https://github.com/Caitingwei/vue2-jd/raw/master/screenshots/createOrder2.png)
 
 - 订单列表
-![image](https://github.com/Caitingwei/vue2-jd/blob/master/orderList.png)
+![image](https://github.com/Caitingwei/vue2-jd/raw/master/screenshots/orderList.png)
 
 - 评价
-![image](https://github.com/Caitingwei/vue2-jd/blob/master/pingjia.png)
+![image](https://github.com/Caitingwei/vue2-jd/raw/master/screenshots/pingjia.png)
 
 - 个人中心
-![image](https://github.com/Caitingwei/vue2-jd/blob/master/usercenter.png)
+![image](https://github.com/Caitingwei/vue2-jd/raw/master/screenshots/usercenter.png)
 
 - 设置中心
-![image](https://github.com/Caitingwei/vue2-jd/blob/master/sz.png)
+![image](https://github.com/Caitingwei/vue2-jd/raw/master/screenshots/sz.png)
 
 ## 安装
 
@@ -103,6 +103,7 @@ npm run start
 npm run build
 
 ```
+
 
 # 项目布局
 

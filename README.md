@@ -29,52 +29,52 @@ __本项目纯属个人瞎弄，正常购买商品请选择京东官方App__
 ## 效果展示
 
 - 响应式布局首页
-<img src="https://github.com/Caitingwei/vue2-jd/raw/master/screenshots/home.png" width="365" height="619" />
+<img  src="https://github.com/Caitingwei/vue2-jd/raw/master/screenshots/home.png" width="365" height="619" />
 
 - 底部商品推荐
-<imgsrc="https://github.com/Caitingwei/vue2-jd/raw/master/screenshots/home2.png" width="365" height="619"  >
+<img src="https://github.com/Caitingwei/vue2-jd/raw/master/screenshots/home2.png" width="365" height="619" />
 
 - 顶部搜索栏
-<imgsrc="https://github.com/Caitingwei/vue2-jd/raw/master/screenshots/search.png" width="365" height="619"  >
+<img src="https://github.com/Caitingwei/vue2-jd/raw/master/screenshots/search.png" width="365" height="619" />
 
 - 商品详情页
-<imgsrc="https://github.com/Caitingwei/vue2-jd/raw/master/screenshots/product.png" width="365" height="619"  >
+<img src="https://github.com/Caitingwei/vue2-jd/raw/master/screenshots/product.png" width="365" height="619" />
 
 - 文章资讯
-<imgsrc="https://github.com/Caitingwei/vue2-jd/raw/master/screenshots/article2.png" width="365" height="619"  >
+<img src="https://github.com/Caitingwei/vue2-jd/raw/master/screenshots/article2.png" width="365" height="619" />
 
 - 视频资讯
-<imgsrc="https://github.com/Caitingwei/vue2-jd/raw/master/screenshots/article.png" width="365" height="619"  >
+<img src="https://github.com/Caitingwei/vue2-jd/raw/master/screenshots/article.png" width="365" height="619" />
 
 - 文章详情
-<imgsrc="https://github.com/Caitingwei/vue2-jd/raw/master/screenshots/articleDetail.png" width="365" height="619"  >
+<img src="https://github.com/Caitingwei/vue2-jd/raw/master/screenshots/articleDetail.png" width="365" height="619" />
 
 - 用户登录
-<imgsrc="https://github.com/Caitingwei/vue2-jd/raw/master/screenshots/login.png" width="365" height="619"  >
+<img src="https://github.com/Caitingwei/vue2-jd/raw/master/screenshots/login.png" width="365" height="619" />
 
 - 注册
-<imgsrc="https://github.com/Caitingwei/vue2-jd/raw/master/screenshots/zhuci.png" width="365" height="619"  >
+<img src="https://github.com/Caitingwei/vue2-jd/raw/master/screenshots/zhuci.png" width="365" height="619" />
 
 - 购物车
-<imgsrc="https://github.com/Caitingwei/vue2-jd/raw/master/screenshots/cart.png" width="365" height="619"  >
+<img src="https://github.com/Caitingwei/vue2-jd/raw/master/screenshots/cart.png" width="365" height="619" />
 
 - 下单
-<imgsrc="https://github.com/Caitingwei/vue2-jd/raw/master/screenshots/createOrder.png" width="365" height="619"  >
+<img src="https://github.com/Caitingwei/vue2-jd/raw/master/screenshots/createOrder.png" width="365" height="619" />
 
 - 下单-支付密码
-<imgsrc="https://github.com/Caitingwei/vue2-jd/raw/master/screenshots/createOrder2.png" width="365" height="619"  >
+<img src="https://github.com/Caitingwei/vue2-jd/raw/master/screenshots/createOrder2.png" width="365" height="619" />
 
 - 订单列表
-<imgsrc="https://github.com/Caitingwei/vue2-jd/raw/master/screenshots/orderList.png" width="365" height="619"  >
+<img src="https://github.com/Caitingwei/vue2-jd/raw/master/screenshots/orderList.png" width="365" height="619" />
 
 - 评价
-<imgsrc="https://github.com/Caitingwei/vue2-jd/raw/master/screenshots/pingjia.png" width="365" height="619"  >
+<img src="https://github.com/Caitingwei/vue2-jd/raw/master/screenshots/pingjia.png" width="365" height="619" />
 
 - 个人中心
-<imgsrc="https://github.com/Caitingwei/vue2-jd/raw/master/screenshots/usercenter.png" width="365" height="619"  >
+<img src="https://github.com/Caitingwei/vue2-jd/raw/master/screenshots/usercenter.png" width="365" height="619" />
 
 - 设置中心
-<imgsrc="https://github.com/Caitingwei/vue2-jd/raw/master/screenshots/sz.png" width="365" height="619"  >
+<img src="https://github.com/Caitingwei/vue2-jd/raw/master/screenshots/sz.png" width="365" height="619" />
 
 ## 安装
 

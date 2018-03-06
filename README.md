@@ -94,7 +94,7 @@ npm --registry https://registry.npm.taobao.org install
 ### 本地调试模式
 
 ```
-npm run start
+npm start
 
 ```
 ### 生产模式(部署)

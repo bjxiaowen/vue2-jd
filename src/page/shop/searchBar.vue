@@ -31,7 +31,7 @@
   .searchRusult {
     position: fixed;
     left: 0;
-    right: 0;
+    top: 0;
     width: 10rem;
     max-width: 10rem;
     margin: 0 auto;
@@ -108,7 +108,7 @@
   .searchContainer {
     position: fixed;
     left: 0;
-    right: 0;
+    top: 0;
     z-index: 9999;
     width: 100%;
     height: 100%;

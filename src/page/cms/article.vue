@@ -34,6 +34,7 @@
     flex-wrap: nowrap;
     margin: 0px 60px 0;
     position: relative;
+    z-index: 100;
     #loadingbar {
       position: absolute;
       transition: .4s;
@@ -252,7 +253,11 @@
       };
     },
 
-    watch: {},
+    watch: {
+      active:function(val){
+        this.switchTabs(val)
+      }
+    },
 
     components: {
       FooterView,
@@ -278,7 +283,6 @@
         }
       },
       switchTabs(Id) {
-        if (this.active === String(Id)) return;
         this.active = Id;
         switch (String(this.active)) {
           case 'tab-container1': //精选
@@ -305,7 +309,7 @@
       showBack(status => {
         this.Status = status;
       })
-      this.switchTabs('tab-container1');
+      this.active = 'tab-container1'
     }
   }
 

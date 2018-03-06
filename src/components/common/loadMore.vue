@@ -164,9 +164,11 @@
       },
       param: {
         type: Object,
-        default: {
-          pageIndex: 1,
-          pageSize: 10
+        default: ()=>{
+          return {
+            pageIndex: 1,
+            pageSize: 10
+          }
         }
       },
       bottomLoadingText: {
@@ -247,8 +249,7 @@
     },
     methods: {
       async onloadMoreScroll(){
-          if(this.AllLoaded)return;
-          if(this.LoadMoreLoading)return;
+          if(this.AllLoaded || this.LoadMoreLoading || !this.commad)return;
           this.LoadMoreLoading = true;
           let response = await this.commad(this.param).catch(()=>{
             this.LoadMoreError = true;

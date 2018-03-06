@@ -225,7 +225,8 @@
 
     <!-- 购物车列表 -->
     <div class="Section">
-      <scroller :onRefresh="onRefreshCallback" ref="cartScroll" width="100%" height="85%" style="margin-top:1.25rem">
+      <load-more  style="width:100%;hegiht: 85%;margin-top:1rem;" :topMethod="onRefreshCallback"
+        :loadMoreIconVisible="false" ref="cartLoadmore">
         <div class="goods">
 
           <!-- 暂时还没做分店铺订单 -->
@@ -264,7 +265,7 @@
           </div>
         </div>
         <p v-if="cartList==''" style="padding: 15px 0;text-align:center;font-size:16px;color:#999;">暂无数据</p>
-      </scroller>
+      </load-more>
     </div>
     <!-- 购物车列表 -->
     <!-- 底部价格计算 -->
@@ -294,6 +295,8 @@
     mapGetters,
     mapMutations
   } from 'vuex';
+  import LoadMore from 'common/loadMore';
+
   export default {
     data() {
       return {
@@ -308,7 +311,8 @@
 
     components: {
       FooterView,
-      SearchBar
+      SearchBar,
+      LoadMore
     },
 
     computed: {
@@ -392,7 +396,7 @@
           this.cartList = Data;
           this.computedTotalFee();
           this.selectedAll = false;
-          this.$refs.cartScroll.finishPullToRefresh();
+          this.$refs.cartLoadmore.onTopLoaded(this.$refs.cartLoadmore.uuid);
         }, 500);
       },
     },

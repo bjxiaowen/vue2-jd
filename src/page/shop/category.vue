@@ -147,12 +147,6 @@
       ...mapMutations([
         'SET_CATEGORY_DATA'
       ]),
-      refresh() {
-        console.log('refresh')
-      },
-      infinite() {
-        console.log('infinite')
-      },
       async rootScrollTo(item) {
         this.selectedRoot = item.Id;
         let { Data } = await this.$store.dispatch('GetCategoryList',{RootId: item.Id });

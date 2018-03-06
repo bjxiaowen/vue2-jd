@@ -16,7 +16,7 @@ Vue.filter('imageUrl', function (json) { //获取第一个文件路径
   }
 })
 
-Vue.filter('DateFormat', function (date, fmt) { //格式化时间   DateFormat(date, 'yyyy-MM-dd hh:mm')
+Vue.filter('DateFormat', function (date, fmt) { //格式化时间   DateFormat('yyyy-MM-dd hh:mm')
   if (date == undefined || date == null) return;
   date = new Date(date);
   if (/(y+)/.test(fmt)) {

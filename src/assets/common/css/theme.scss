@@ -131,7 +131,13 @@ body,
   }
 }
 
-.mint-loadmore-top{
+.loadmore-top,.loadmore-bottom{
+  margin-top: -50px;
+  }
+.loadmore-top{
+  text-align: center;
+  height: 50px;
+  line-height: 50px;
   svg{
     display:none;
   }

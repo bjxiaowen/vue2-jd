@@ -445,7 +445,7 @@
 <template>
   <div id="jd">
     <!-- 搜索栏 -->
-    <search-bar :Status="Status" :style="{opacity:searchOpacity,zIndex:999999}" v-if="searchBarVisilbe && cmsData" />
+    <search-bar :Status="Status"  v-if="searchBarVisilbe && cmsData" />
     <!-- 搜索栏 -->
     <load-more @translate-change="translateChange" style="width:100%;" @loadMore="infiniteCallback" :commad="commad" :param="recommendParam" :topMethod="onRefreshCallback"
       :loadMoreIconVisible="false" ref="recommendLoadmore" v-if="cmsData">
@@ -1033,7 +1033,6 @@
           pageSize: 10,
           pageIndex: 1
         },
-        searchOpacity: 1,
         recommendData: [],
         cmsData: null,
         searchBarVisilbe: true
@@ -1063,7 +1062,9 @@
         this.recommendParam.pageSize = 10;
         this.recommendParam.pageIndex = 1;
         this.updatedData();
-        this.$refs.recommendLoadmore.onTopLoaded(this.$refs.recommendLoadmore.uuid);
+        setTimeout(() => {
+          this.$refs.recommendLoadmore.onTopLoaded(this.$refs.recommendLoadmore.uuid);
+        }, 1000); 
       },
       async infiniteCallback(response) { //加载更多
         if (response.Data.length > 0) {

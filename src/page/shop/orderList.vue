@@ -87,6 +87,8 @@
     .my-header {
       padding: $padding;
       background: #fff;
+      position: relative;
+      z-index: 1;
       @include flexbox(space-between,
       center,
       row,
@@ -121,6 +123,7 @@
       flex-direction: row;
       flex-wrap: nowrap;
       margin: 0;
+      z-index: 111;
       position: relative;
       #loadingbar {
         position: absolute;

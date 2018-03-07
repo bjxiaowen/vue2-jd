@@ -30,7 +30,6 @@
 
   .searchRusult {
     position: fixed;
-    left: 0;
     top: 0;
     width: 10rem;
     max-width: 10rem;

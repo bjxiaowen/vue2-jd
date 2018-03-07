@@ -42,6 +42,7 @@ const user = {
     }, parameterData) {
       return new Promise((resolve, reject) => {
         removeSessionStorage('MemberToken');
+        commit('SET_USERINFO_DATA',null)        
         resolve();
       })
     },

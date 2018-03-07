@@ -24,6 +24,29 @@
   /* 购物车列表 */
 
   .Section {
+    .login-info {
+      margin-top: 40px;
+      position: relative;
+      z-index: 1;
+      background: #fff;
+      padding: $padding 25px;
+      border-top: 1px solid #eee;
+      @include flexbox(flex-start, center, row, nowrap);
+      .login {
+        border: 1px solid #999;
+        color: #999;
+        background: transparent;
+        width: 60px;
+        height: 20px;
+        @include flexbox(center, center, row, nowrap);
+        flex: initial;
+        margin-right: 10px;
+        border-radius: 2px;
+      }
+      span {
+        color: #999;
+      }
+    }
     .goods {
       @include flexbox(flex-start, space-between, column, wrap);
       background: linear-gradient(180deg, #fff, #efefef);
@@ -209,7 +232,6 @@
   }
 
   /* 底部计算栏 */
-
 </style>
 
 <template>
@@ -225,8 +247,11 @@
 
     <!-- 购物车列表 -->
     <div class="Section">
-      <load-more  style="width:100%;hegiht: 85%;margin-top:1rem;" :topMethod="onRefreshCallback"
-        :loadMoreIconVisible="false" ref="cartLoadmore">
+      <div class="login-info" v-if="!isLogin">
+        <button class="login" @click="$router.push('/login')">登录</button>
+        <span>登录后同步电脑与手机购物车中的商品</span>
+      </div>
+      <load-more style="margin-top:1.2rem;width:100%;hegiht: 85%;" :topMethod="onRefreshCallback" :loadMoreIconVisible="false" ref="cartLoadmore">
         <div class="goods">
 
           <!-- 暂时还没做分店铺订单 -->
@@ -236,7 +261,7 @@
           </div>
           <!-- 暂时还没做分店铺订单 -->
 
-          <div class="store-pd" v-if="cartList!=null">
+          <div class="store-pd" v-if="cartList">
             <div class="store-pd-item" v-for="(item,index) in cartList" :key="index">
               <i :class="['select-default-icon',item.checked ? 'select-icon' : '']" @click="checked(item)"></i>
               <div class="pd-images">
@@ -264,7 +289,7 @@
             </div>
           </div>
         </div>
-        <p v-if="cartList==''" style="padding: 15px 0;text-align:center;font-size:16px;color:#999;">暂无数据</p>
+        <p v-if="!cartList || cartList == ''" style="margin-top:50px;padding: 15px 0;text-align:center;font-size:16px;color:#999;">购物车是空的</p>
       </load-more>
     </div>
     <!-- 购物车列表 -->
@@ -292,6 +317,11 @@
     Toast
   } from 'mint-ui'
   import {
+    setSessionStorage,
+    getSessionStorage,
+    removeSessionStorage
+  } from '@/utils/mixin';
+  import {
     mapGetters,
     mapMutations
   } from 'vuex';
@@ -303,7 +333,8 @@
         cartList: null,
         totalFee: 0,
         selectedCounter: 0,
-        selectedAll: false
+        selectedAll: false,
+        isLogin: false
       };
     },
 
@@ -317,7 +348,8 @@
 
     computed: {
       ...mapGetters([
-        'cartProductData'
+        'cartProductData',
+        'userInfo'
       ])
     },
 
@@ -361,13 +393,19 @@
         this.selectedAll = selectedCounter === this.cartList.length ? true : false;
         this.totalFee = computedFee.toFixed(2);
       },
-      async editProductNum({item,increment,counter}) {
-        let params = {SelectedList: JSON.stringify([{
+      async editProductNum({
+        item,
+        increment,
+        counter
+      }) {
+        let params = {
+          SelectedList: JSON.stringify([{
             ProductNo: item.product.productNo
-        }])}
-        if(counter){
+          }])
+        }
+        if (counter) {
           params.Counter = counter
-        }else{
+        } else {
           params.Increment = increment
         }
         await this.$store.dispatch('SelectProduct', params)
@@ -383,15 +421,20 @@
         this.computedTotalFee();
       },
       async initData() {
+        let token = getSessionStorage('MemberToken')
+        this.isLogin = token ? true : false;
+        if(!token)return;
         let {
           Data
         } = await this.$store.dispatch('GetSelectedProductList');
-        this.cartList = Data;
+        this.cartList = Data || null;
       },
       async onRefreshCallback() {
         let {
           Data
-        } = await this.$store.dispatch('GetSelectedProductList');
+        } = await this.$store.dispatch('GetSelectedProductList').catch(err=>{
+          return this.$refs.cartLoadmore.onTopLoaded(this.$refs.cartLoadmore.uuid);
+        });
         setTimeout(() => {
           this.cartList = Data;
           this.computedTotalFee();
@@ -404,9 +447,6 @@
       this.initData();
     }
   }
-
 </script>
 <style lang='scss' scoped>
-
-
 </style>

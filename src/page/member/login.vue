@@ -298,7 +298,7 @@
               <span>密码</span>
             </div>
             <div class="right">
-              <input v-validate.initial="'required'" name="password" :type="loginForm.passwordFormType" v-model="loginForm.password" placeholder="请输入密码">
+              <input v-validate.initial="'required'" name="password" @keyup.enter="Login" :type="loginForm.passwordFormType" v-model="loginForm.password" placeholder="请输入密码">
             </div>
             <i class="clear" style="" v-show="loginForm.password.length>0" @click="loginForm.password=''" style="right: 40px;"></i>
             <i :class="['eye-icon', loginForm.passwordFormType=='password'?'eye-close-icon':'']" style="position: absolute;right: 10px;"

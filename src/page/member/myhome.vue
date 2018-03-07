@@ -1,10 +1,11 @@
 <!-- myhome -->
 <style lang="scss" scoped>
   @import '~assets/common/css/mixin.scss';
-  .content{
+  .content {
     padding-bottom: 1.35rem;
     min-height: 100vh;
   }
+
   .my-header {
     height: 3rem;
     padding: 10px 15px;
@@ -216,14 +217,13 @@
   }
 
   /* 为您推荐 */
-
 </style>
 
 <template>
   <div>
     <div class="content">
       <load-more style="width:100%;" @loadMore="infiniteCallback" :commad="commad" :param="recommendParam" :topMethod="onRefreshCallback"
-      :loadMoreIconVisible="false" ref="recommendLoadmore">
+        :loadMoreIconVisible="false" ref="recommendLoadmore">
         <span style="-webkit-transform: scale(.9)!important;transform: scale(.9)!important;position:  absolute;top: 45%;left: 45%;font-size:  12px;font-weight: normal;text-shadow:  none;box-shadow:  none;"
           slot="refresh-spinner">更新中...</span>
         <div class="my-header">
@@ -233,13 +233,13 @@
               <i class="msg-icon"></i>
             </div>
           </div>
-          <div class="userinfo" v-if="userData.userInfo!=null" @click="$router.push(`/sttings`)">
+          <div class="userinfo" @click.stop.prevent="$router.push(!userInfo ? `/login` : `/sttings`)">
             <div class="avatar">
-              <img :src="userData.userInfo.photoUrl" alt="">
+              <img :src="!userInfo || !userData.userInfo? 'https://static.hdslb.com/images/akari.jpg' : userData.userInfo.photoUrl" alt="">
             </div>
             <div class="info-box">
-              <span class="username">{{userData.userInfo.nickName}}</span>
-              <div class="my-validWalletAmount">我的余额：{{userData.userInfo.validWalletAmount}}元</div>
+              <span class="username" >{{!userInfo || !userData.userInfo? '登录/注册 >' : userData.userInfo.nickName}}</span>
+              <div class="my-validWalletAmount" v-if="userInfo && userData.userInfo">我的余额：{{userData.userInfo.validWalletAmount}}元</div>
             </div>
           </div>
         </div>
@@ -311,6 +311,11 @@
   import LoadMore from 'common/loadMore';
   import BackHead from 'common/backHead';
   import {
+    setSessionStorage,
+    getSessionStorage,
+    removeSessionStorage
+  } from '@/utils/mixin';
+  import {
     mapGetters,
     mapMutations
   } from 'vuex';
@@ -354,6 +359,8 @@
         'SET_USERINFO_DATA'
       ]),
       async onRefreshCallback() {
+        let token = getSessionStorage('MemberToken')
+        if (!token) return this.$refs.recommendLoadmore.onTopLoaded(this.$refs.recommendLoadmore.uuid);
         this.recommendParam.pageSize = 10;
         this.recommendParam.pageIndex = 1;
         this.cmsData.recommendData = [];
@@ -370,6 +377,8 @@
       },
       async initData() {
         if (!this.userInfo) {
+          let token = getSessionStorage('MemberToken')
+          if (!token) return;
           let res = await this.$store.dispatch('GetUserInfo');
           await this.SET_USERINFO_DATA(res.Data);
           this.userData.userInfo = res.Data;
@@ -383,9 +392,6 @@
       this.initData();
     }
   }
-
 </script>
 <style lang='scss' scoped>
-
-
 </style>

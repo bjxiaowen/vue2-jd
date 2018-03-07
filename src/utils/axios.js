@@ -44,7 +44,7 @@ class Http {
                 return resolve(response.data)
             }else{
                 if(response.data.Code === 2){ //未登录
-                  router.push('/Login')
+                //   router.push('/Login')
                 }
                 Toast({
                     message: response.data.Message,

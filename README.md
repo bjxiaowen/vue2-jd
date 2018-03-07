@@ -80,6 +80,7 @@ __本项目纯属个人瞎弄，仅供学习和参考，禁止用于非法用途
 
 #### 注意：由于涉及大量的 ES6/7 等新属性，node 需要 6.0 以上版本 
 
+>> 关于node mongodb的安装方法可以查看[安装教程](https://caitingwei.github.io/2018/03/02/%E4%BB%8Enode%E5%90%8E%E5%8F%B0%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2/)
 ```
 git clone https://github.com/Caitingwei/vue2-jd.git
 

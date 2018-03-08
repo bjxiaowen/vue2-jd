@@ -251,7 +251,7 @@
         <button class="login" @click="$router.push('/login')">登录</button>
         <span>登录后同步电脑与手机购物车中的商品</span>
       </div>
-      <load-more style="margin-top:1.2rem;width:100%;hegiht: 85%;" :topMethod="onRefreshCallback" :loadMoreIconVisible="false" ref="cartLoadmore">
+      <load-more style="width:100%;hegiht: 85%;" :topMethod="onRefreshCallback" :loadMoreIconVisible="false" ref="cartLoadmore">
         <div class="goods">
 
           <!-- 暂时还没做分店铺订单 -->

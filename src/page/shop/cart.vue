@@ -251,7 +251,8 @@
         <button class="login" @click="$router.push('/login')">登录</button>
         <span>登录后同步电脑与手机购物车中的商品</span>
       </div>
-      <load-more style="width:100%;hegiht: 85%;" :topMethod="onRefreshCallback" :loadMoreIconVisible="false" ref="cartLoadmore">
+      <load-more :style="{width:'100%',height: '85%',paddingTop: isLogin ? '1.2rem' : '0'}" :topMethod="onRefreshCallback" :loadMoreIconVisible="false"
+        ref="cartLoadmore">
         <div class="goods">
 
           <!-- 暂时还没做分店铺订单 -->
@@ -423,24 +424,26 @@
       async initData() {
         let token = getSessionStorage('MemberToken')
         this.isLogin = token ? true : false;
-        if(!token)return;
+        if (!token) return;
         let {
           Data
         } = await this.$store.dispatch('GetSelectedProductList');
         this.cartList = Data || null;
       },
       async onRefreshCallback() {
-        let {
-          Data
-        } = await this.$store.dispatch('GetSelectedProductList').catch(err=>{
-          return this.$refs.cartLoadmore.onTopLoaded(this.$refs.cartLoadmore.uuid);
+        this.$store.dispatch('GetSelectedProductList').then(response => {
+          setTimeout(() => {
+            this.cartList = response.Data;
+            this.computedTotalFee();
+            this.selectedAll = false;
+            this.$refs.cartLoadmore.onTopLoaded(this.$refs.cartLoadmore.uuid);
+          }, 500);
+        }, error => {
+          this.$refs.cartLoadmore.translate = 0;
+          this.$refs.cartLoadmore.topStatus = 'pull';
+          this.$refs.cartLoadmore.AllLoaded = false;
+          return this.$refs.cartLoadmore.LoadMoreLoading = false;
         });
-        setTimeout(() => {
-          this.cartList = Data;
-          this.computedTotalFee();
-          this.selectedAll = false;
-          this.$refs.cartLoadmore.onTopLoaded(this.$refs.cartLoadmore.uuid);
-        }, 500);
       },
     },
     mounted: function () {

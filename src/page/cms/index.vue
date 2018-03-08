@@ -1056,7 +1056,7 @@
     },
     methods: {
       translateChange(y){ //监听下拉的阈值
-        this.searchBarVisilbe = y>0 ? false : true;
+        this.searchBarVisilbe = y>8 ? false : true;
       },
       async onRefreshCallback() { //下拉刷新
         this.recommendParam.pageSize = 10;
